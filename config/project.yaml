@@ -1,0 +1,32 @@
+email:
+  fromEmail: chris.m.lusk@gmail.com
+  fromName: FMAA
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  8b675147-1ee6-4669-b661-2a91e3391883:
+    name: Common
+siteGroups:
+  6c13abe8-5081-4145-90f3-542d9c9f997e:
+    name: FMAA
+sites:
+  041d1c44-605d-431b-82cd-b8eef9c116ea:
+    baseUrl: $DEFAULT_SITE_URL
+    handle: default
+    hasUrls: true
+    language: en-US
+    name: FMAA
+    primary: true
+    siteGroup: 6c13abe8-5081-4145-90f3-542d9c9f997e
+    sortOrder: 1
+system:
+  edition: solo
+  live: true
+  name: FMAA
+  schemaVersion: 3.1.25
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true
