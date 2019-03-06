@@ -1,10 +1,255 @@
+dateModified: 1551904429
 email:
   fromEmail: chris.m.lusk@gmail.com
   fromName: FMAA
   transportType: craft\mail\transportadapters\Sendmail
 fieldGroups:
-  8b675147-1ee6-4669-b661-2a91e3391883:
-    name: Common
+  58d1da1c-fa80-4225-9c52-e2086e736cf3:
+    name: Conferences
+  cb3c7d9d-d50f-4bd8-96bc-611ee4fda6c4:
+    name: Friends
+fields:
+  7076c1ee-f30c-4cf5-a62e-e4b91783ebeb:
+    contentColumnType: text
+    fieldGroup: cb3c7d9d-d50f-4bd8-96bc-611ee4fda6c4
+    handle: friendTwitter
+    instructions: 'Only include the handle — not the full URL. No "@" either.'
+    name: 'Friend Twitter'
+    searchable: true
+    settings:
+      charLimit: '15'
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  96ef254e-0bcd-44c4-a5eb-a9b3fd7ee19e:
+    contentColumnType: string
+    fieldGroup: cb3c7d9d-d50f-4bd8-96bc-611ee4fda6c4
+    handle: friendConference
+    instructions: 'Select the conference to which this friend belongs.'
+    name: 'Friend Conference'
+    searchable: false
+    settings:
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      source: null
+      sources:
+        - 'section:8c27a873-fec1-4cad-8835-c85570deee6f'
+      targetSiteId: null
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  a4d98d8f-916c-4398-9ab1-973f90209523:
+    contentColumnType: string
+    fieldGroup: cb3c7d9d-d50f-4bd8-96bc-611ee4fda6c4
+    handle: friendImage
+    instructions: 'It''s best to upload a square image that is at least 400x400 pixels.'
+    name: 'Friend Image'
+    searchable: false
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:4542017b-c83f-469a-9453-b6f3afba24e6'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      singleUploadLocationSource: 'volume:4542017b-c83f-469a-9453-b6f3afba24e6'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: '1'
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  c01abaec-88f4-4b82-9171-48210cf01ee1:
+    contentColumnType: text
+    fieldGroup: cb3c7d9d-d50f-4bd8-96bc-611ee4fda6c4
+    handle: friendBio
+    instructions: ''
+    name: 'Friend Bio'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: '1'
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  f859d582-1ac6-40e4-b57a-68ab4dd55e0f:
+    contentColumnType: string
+    fieldGroup: 58d1da1c-fa80-4225-9c52-e2086e736cf3
+    handle: conferenceLogo
+    instructions: ''
+    name: 'Conference Logo'
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:4542017b-c83f-469a-9453-b6f3afba24e6'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      singleUploadLocationSource: 'volume:04a5615e-94f3-4efd-929d-12028df1aef7'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: '1'
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  fc4ac15a-c4d6-476a-9852-f7e21cae8e61:
+    contentColumnType: text
+    fieldGroup: 58d1da1c-fa80-4225-9c52-e2086e736cf3
+    handle: conferenceDescription
+    instructions: ''
+    name: 'Conference Description'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: '1'
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+globalSets:
+  2e691f21-8cfe-455b-931f-9447cce379eb:
+    handle: footer
+    name: Footer
+plugins:
+  assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  aws-s3:
+    edition: standard
+    enabled: true
+    schemaVersion: '1.2'
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.2
+  typogrify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+sections:
+  8941eb05-fc03-4475-b7f4-5251d675eb65:
+    enableVersioning: true
+    entryTypes:
+      40f3d213-2851-4c38-9906-3f03ea043801:
+        handle: home
+        hasTitleField: false
+        name: Home
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: null
+    handle: home
+    name: Home
+    propagateEntries: true
+    siteSettings:
+      041d1c44-605d-431b-82cd-b8eef9c116ea:
+        enabledByDefault: true
+        hasUrls: true
+        template: index
+        uriFormat: __home__
+    type: single
+  89663d7f-ef39-490c-8371-7f81e050fc1f:
+    enableVersioning: true
+    entryTypes:
+      286d4104-25d2-4cea-a448-ef8b160dbbaa:
+        fieldLayouts:
+          e005dacf-09a0-45d7-8edc-830fc82c19b6:
+            tabs:
+              -
+                fields:
+                  7076c1ee-f30c-4cf5-a62e-e4b91783ebeb:
+                    required: false
+                    sortOrder: 4
+                  96ef254e-0bcd-44c4-a5eb-a9b3fd7ee19e:
+                    required: false
+                    sortOrder: 2
+                  a4d98d8f-916c-4398-9ab1-973f90209523:
+                    required: false
+                    sortOrder: 3
+                  c01abaec-88f4-4b82-9171-48210cf01ee1:
+                    required: false
+                    sortOrder: 1
+                name: Friends
+                sortOrder: 1
+        handle: friends
+        hasTitleField: true
+        name: Friends
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: 'Friend Name'
+    handle: friends
+    name: Friends
+    propagateEntries: true
+    siteSettings:
+      041d1c44-605d-431b-82cd-b8eef9c116ea:
+        enabledByDefault: true
+        hasUrls: true
+        template: friends/_entry
+        uriFormat: 'friends/{slug}'
+    type: channel
+  8c27a873-fec1-4cad-8835-c85570deee6f:
+    enableVersioning: true
+    entryTypes:
+      34a732bc-9825-4065-a417-14e9c97e3231:
+        fieldLayouts:
+          983f2b27-13ae-429f-a0b4-9ebcd3d564fa:
+            tabs:
+              -
+                fields:
+                  ba6f283f-392f-4c6c-836b-6c0a76b3e2d7:
+                    required: false
+                    sortOrder: 3
+                  f859d582-1ac6-40e4-b57a-68ab4dd55e0f:
+                    required: false
+                    sortOrder: 2
+                  fc4ac15a-c4d6-476a-9852-f7e21cae8e61:
+                    required: false
+                    sortOrder: 1
+                name: Conferences
+                sortOrder: 1
+        handle: conferences
+        hasTitleField: true
+        name: Conferences
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: 'Conference Name'
+    handle: conferences
+    name: Conferences
+    propagateEntries: true
+    siteSettings:
+      041d1c44-605d-431b-82cd-b8eef9c116ea:
+        enabledByDefault: true
+        hasUrls: true
+        template: conferences/_entry
+        uriFormat: 'conferences/{slug}'
+    type: channel
 siteGroups:
   6c13abe8-5081-4145-90f3-542d9c9f997e:
     name: FMAA
@@ -23,10 +268,68 @@ system:
   live: true
   name: FMAA
   schemaVersion: 3.1.25
-  timeZone: America/Los_Angeles
+  timeZone: America/Chicago
 users:
   allowPublicRegistration: false
   defaultGroup: null
   photoSubpath: ''
   photoVolumeUid: null
   requireEmailVerification: true
+volumes:
+  04a5615e-94f3-4efd-929d-12028df1aef7:
+    handle: conferences
+    hasUrls: true
+    name: Conferences
+    settings:
+      autoFocalPoint: ''
+      bucket: friendship-madness-production
+      bucketSelectionMode: choose
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $AMAZON_S3_ACCESS_KEY_ID
+      region: us-east-1
+      secret: $AMAZON_S3_SECRET_ACCESS_KEY
+      storageClass: ''
+      subfolder: conferences
+    sortOrder: 3
+    type: craft\awss3\Volume
+    url: 'https://s3.us-east-1.amazonaws.com/friendship-madness-production/'
+  4542017b-c83f-469a-9453-b6f3afba24e6:
+    handle: friends
+    hasUrls: true
+    name: Friends
+    settings:
+      autoFocalPoint: ''
+      bucket: friendship-madness-production
+      bucketSelectionMode: choose
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $AMAZON_S3_ACCESS_KEY_ID
+      region: us-east-1
+      secret: $AMAZON_S3_SECRET_ACCESS_KEY
+      storageClass: ''
+      subfolder: friends
+    sortOrder: '1'
+    type: craft\awss3\Volume
+    url: $AMAZON_S3_BASE_URL
+  b4a67750-f2e9-4501-9ea5-cc81f379cfa9:
+    handle: news
+    hasUrls: true
+    name: News
+    settings:
+      autoFocalPoint: ''
+      bucket: friendship-madness-production
+      bucketSelectionMode: choose
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $AMAZON_S3_ACCESS_KEY_ID
+      region: us-east-1
+      secret: $AMAZON_S3_SECRET_ACCESS_KEY
+      storageClass: ''
+      subfolder: news
+    sortOrder: '2'
+    type: craft\awss3\Volume
+    url: 'https://s3.us-east-1.amazonaws.com/friendship-madness-production/'

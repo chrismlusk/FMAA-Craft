@@ -1,11 +1,46 @@
 {
   "name": "fmaa",
   "version": "1.0.0",
-  "description": "The home of Friendship Madness",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Craft 3 website for Friendship Madness",
   "author": "Chris Lusk",
-  "license": "ISC"
+  "license": "ISC",
+  "main": "gulpfile.js/index.js",
+  "homepage": "http://friendshipmadness.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrismlusk/FMAA-Craft.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp build && gulp watch",
+    "gulp": "gulp",
+    "build": "gulp build",
+    "dev": "start"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.4.10",
+    "babel-eslint": "^10.0.1",
+    "del": "^4.0.0",
+    "eslint": "^5.15.1",
+    "eslint-config-prettier": "^4.1.0",
+    "gulp": "^4.0.0",
+    "gulp-cache": "^1.1.1",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-eslint": "^5.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-newer": "^1.4.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-stylelint": "^8.0.0",
+    "node-sass": "^4.11.0",
+    "prettier": "^1.16.4",
+    "require-dir": "^1.2.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-scss": "^3.5.4",
+    "webpack": "^4.29.6"
+  }
 }
