@@ -1,16 +1,35 @@
 <!DOCTYPE html>
-<html lang="en-US" class="no-js">
+<html class="no-js" lang="en-US">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
   {% include '_partials/head' %}
 </head>
-
 <body class="{{ bodyClass | default('') }}">
   <header class="header" role="navigation">
-    <a href="/" class="logo">LOGO</a>
-    nav
+    <nav class="nav">
+      <ul class="nav__menu">
+        <li class="nav__item">
+          <a href="#" class="nav__link">Home</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">News</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Friends</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Bracket</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">About</a>
+        </li>
+      </ul>
+      <div class="nav__item">
+        May the best friend win
+      </div>
+    </nav>
   </header>
   <main class="main" role="main">
     {% block content %}{% endblock %}

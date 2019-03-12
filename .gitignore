@@ -21,6 +21,7 @@ Thumbs.db
 *.log
 /logs/
 /tmp
+/.tmp
 
 # MISC FILES
 .cache
