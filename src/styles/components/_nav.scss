@@ -12,11 +12,32 @@
   list-style: none;
 }
 
-.nav__item {}
+.nav__item {
+  display: flex;
+  align-items: center;
+}
 
 .nav__link {
-  display: block;
   padding: 1rem;
   font-weight: 500;
   color: $white;
+}
+
+.nav__brand {
+  padding: 0 .75rem;
+  color: $white !important;
+  background-color: $blue-light;
+
+  .svg {
+    width: 100px;
+  }
+}
+
+.nav__tagline {
+  margin-right: 1rem;
+  color: rgba($white, .6);
+
+  .svg {
+    width: 215px;
+  }
 }

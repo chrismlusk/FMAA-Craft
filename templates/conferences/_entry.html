@@ -1,18 +1,29 @@
-{% set name = entry.title %}
-{% set description = entry.conferenceDescription %}
-{% set logo = entry.conferenceLogo.one() %}
+{# ================================================================== #}
+{# Conference template
+{# ================================================================== #}
 
-<div>
-  <h1>{{ name }}</h1>
-  <div>{{ description }}</div>
-  {% if logo | length %}
-    <img src="{{ logo.url }}" alt="{{ name }}" />
-  {% endif %}
-</div>
+{% extends "_layout" %}
+
+{% block content %}
+  {% set name = entry.title %}
+  {% set description = entry.conferenceDescription %}
+  {% set logo = entry.conferenceLogo.one() %}
+
+  <div>
+    <h1>{{ name }}</h1>
+    <div>{{ description }}</div>
+    {% if logo | length %}
+      <img src="{{ logo.url }}" alt="{{ name }}" style="width:120px" />
+    {% endif %}
+  </div>
 
 
-{% set friends = craft.entries().section('friends') %}
-{% for friend in friends %}
-  <h3>{{ friend.title }}</h3>
-  <p>{{ friend.friendConference.one()}}</p>
-{% endfor %}
+  {% set friends = craft.entries().section('friends').relatedTo({
+    targetElement: entry
+  }) %}
+  {% for friend in friends %}
+    <h3>{{ friend.title }}</h3>
+    <p>{{ friend.friendConference.one()}}</p>
+  {% endfor %}
+
+{% endblock %}

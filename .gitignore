@@ -15,6 +15,7 @@ Thumbs.db
 
 # ASSETS
 /web/dist
+/web/public
 
 # TEMP
 .cache

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "568cda0c38ddad765f759c0d5075d3eb",
+    "content-hash": "fe7aa53c67366966e04842d2d320103c",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -449,11 +449,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.1.17.1",
+            "version": "3.1.17.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/fcfa3889b95955bbfe38c2598e95aa154523c795",
-                "reference": "fcfa3889b95955bbfe38c2598e95aa154523c795",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/600ae6aaab1b8b686a3e6eca4cb27ddf74289052",
+                "reference": "600ae6aaab1b8b686a3e6eca4cb27ddf74289052",
                 "shasum": ""
             },
             "require": {
@@ -482,7 +482,7 @@
                 "seld/cli-prompt": "^1.0.3",
                 "symfony/yaml": "^3.2|^4.0",
                 "true/punycode": "^2.1.0",
-                "twig/twig": "^2.5.0",
+                "twig/twig": "~2.6.2",
                 "yii2tech/ar-softdelete": "^1.0.2",
                 "yiisoft/yii2": "~2.0.16.1",
                 "yiisoft/yii2-debug": "^2.0.10",
@@ -529,7 +529,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2019-03-09T01:51:41+00:00"
+            "time": "2019-03-12T15:10:31+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -1884,6 +1884,37 @@
             ],
             "description": "A polyfill for getallheaders.",
             "time": "2016-02-11T07:05:27+00:00"
+        },
+        {
+            "name": "sebastianlenz/linkfield",
+            "version": "1.0.17",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastian-lenz/craft-linkfield/zipball/fe676cdf3d667df646adfab5963e8f6e38e4c6de",
+                "reference": "fe676cdf3d667df646adfab5963e8f6e38e4c6de",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1",
+                "php": "^7.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "typedlinkfield",
+                "name": "Typed link field",
+                "developer": "Sebastian Lenz",
+                "developerUrl": "https://github.com/sebastian-lenz/"
+            },
+            "autoload": {
+                "psr-4": {
+                    "typedlinkfield\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Craft field type for selecting links",
+            "time": "2019-02-05T13:00:26+00:00"
         },
         {
             "name": "seld/cli-prompt",

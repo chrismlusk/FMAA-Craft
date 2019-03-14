@@ -1,0 +1,17 @@
+{# ================================================================== #}
+{# Friend list
+{# ================================================================== #}
+
+{% extends "_layout" %}
+
+{% block content %}
+  {% set friends = craft.entries().section('friends').all() %}
+
+  <ul>
+    {% for friend in friends %}
+      <li>
+        <a href="/friends/{{friend.slug}}">{{friend.title}}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

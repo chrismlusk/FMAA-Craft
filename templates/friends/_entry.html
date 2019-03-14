@@ -1,13 +1,22 @@
-{% set name = entry.title %}
-{% set bio = entry.friendBio %}
-{% set conference = entry.friendConference.one() %}
-{% set image = entry.friendImage.one() %}
-{% set twitter = entry.friendTwitter %}
+{# ================================================================== #}
+{# Friend template
+{# ================================================================== #}
 
-<div>
-  <h1>{{ name }}</h1>
-  <div>{{ bio }}</div>
-  <div>{{ conference }}</div>
-  <div><img src="{{ image.url }}" alt="{{ name }}" /></div>
-  <div>@{{ twitter }}</div>
-</div>
+{% extends "_layout" %}
+
+{% block content %}
+  {% set name = entry.title %}
+  {% set bio = entry.friendBio %}
+  {% set conference = entry.friendConference.one() %}
+  {% set image = entry.friendImage.one() %}
+  {% set twitter = entry.friendTwitter %}
+
+  <div>
+    <h1>{{ name }}</h1>
+    <div>{{ bio }}</div>
+    <div>{{ conference }}</div>
+    <div><img src="{{ image.url }}" alt="{{ name }}" /></div>
+    <div>@{{ twitter }}</div>
+  </div>
+
+{% endblock %}
