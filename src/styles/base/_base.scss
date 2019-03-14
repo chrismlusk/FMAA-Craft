@@ -1,0 +1,10 @@
+a {
+  color: $link-color;
+  transition-timing-function: $transition-timing-function;
+  transition-duration: $transition-duration;
+  transition-property: color;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}

@@ -1,16 +1,39 @@
 <!DOCTYPE html>
-<html lang="en-US" class="no-js">
+<html class="no-js" lang="en-US">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
   {% include '_partials/head' %}
 </head>
-
 <body class="{{ bodyClass | default('') }}">
   <header class="header" role="navigation">
-    <a href="/" class="logo">LOGO</a>
-    nav
+
+
+    {% set nav = craft.entries().section('navigation') %}
+    <nav class="nav">
+      <div class="nav__menu">
+        <a href="/" class="nav__item nav__brand">
+          <span class="sr-only">Home</span>
+          {% include '_svg/fmaa-wordmark.svg' %}
+        </a>
+        {% if nav | length %}
+          {% for item in nav.all() %}
+            {% if item.linkField.getUrl() | split('/') | last == craft.app.request.pathInfo | split('/') | last %}
+              {% set isActive = ' is-active' %}
+            {% else %}
+              {% set isActive = '' %}
+            {% endif %}
+            {{ item.linkField.getLink({
+              class: 'nav__item nav__link' ~ isActive
+            }) }}
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="nav__item nav__tagline">
+        {% include '_svg/fmaa-tagline.svg' %}
+      </div>
+    </nav>
   </header>
   <main class="main" role="main">
     {% block content %}{% endblock %}

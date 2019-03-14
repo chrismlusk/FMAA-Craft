@@ -8,6 +8,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cleanCss = require('gulp-clean-css');
 const size = require('gulp-size');
+// const browserSync = require('browser-sync');
 
 const { paths, plugins } = require('../config');
 const styles = paths.styles;
@@ -38,6 +39,7 @@ function compileStyles() {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(styles.dest))
     .pipe(gulp.dest('.tmp/styles'));
+    // .pipe(browserSync.stream());
 }
 
 const stylesTask = gulp.parallel(lintStyles, compileStyles);

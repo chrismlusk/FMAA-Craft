@@ -1,4 +1,4 @@
-dateModified: 1551904429
+dateModified: 1552526800
 email:
   fromEmail: chris.m.lusk@gmail.com
   fromName: FMAA
@@ -6,6 +6,8 @@ email:
 fieldGroups:
   58d1da1c-fa80-4225-9c52-e2086e736cf3:
     name: Conferences
+  7d9f323f-dc2e-430d-b4a3-d86a2e91e742:
+    name: Common
   cb3c7d9d-d50f-4bd8-96bc-611ee4fda6c4:
     name: Friends
 fields:
@@ -89,6 +91,52 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
+  e24fa846-b505-4c6e-9d07-8351c5e31a66:
+    contentColumnType: text
+    fieldGroup: 7d9f323f-dc2e-430d-b4a3-d86a2e91e742
+    handle: linkField
+    instructions: ''
+    name: 'Link Field'
+    searchable: true
+    settings:
+      allowCustomText: '1'
+      allowTarget: ''
+      allowedLinkNames: '*'
+      autoNoReferrer: ''
+      defaultLinkName: entry
+      defaultText: ''
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        asset:
+          allowCustomQuery: ''
+          sources: '*'
+        category:
+          allowCustomQuery: ''
+          sources: '*'
+        custom:
+          allowAliases: ''
+          disableValidation: ''
+        email:
+          allowAliases: ''
+          disableValidation: ''
+        entry:
+          allowCustomQuery: ''
+          sources: '*'
+        site:
+          sites: '*'
+        tel:
+          allowAliases: ''
+          disableValidation: ''
+        url:
+          allowAliases: ''
+          disableValidation: ''
+        user:
+          allowCustomQuery: ''
+          sources: '*'
+    translationKeyFormat: null
+    translationMethod: none
+    type: typedlinkfield\fields\LinkField
   f859d582-1ac6-40e4-b57a-68ab4dd55e0f:
     contentColumnType: string
     fieldGroup: 58d1da1c-fa80-4225-9c52-e2086e736cf3
@@ -150,11 +198,48 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.2.2
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   typogrify:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
 sections:
+  60dc62ad-8cee-46b0-9b3d-4fab88fb3043:
+    enableVersioning: true
+    entryTypes:
+      0dac54b6-ec34-4b7f-89fb-8e64c381612c:
+        fieldLayouts:
+          6b628ef2-74c5-4b32-8b5e-e476c74424c0:
+            tabs:
+              -
+                fields:
+                  e24fa846-b505-4c6e-9d07-8351c5e31a66:
+                    required: false
+                    sortOrder: 1
+                name: Common
+                sortOrder: 1
+        handle: navigation
+        hasTitleField: false
+        name: Navigation
+        sortOrder: 1
+        titleFormat: '{linkField.text}'
+        titleLabel: ''
+    handle: navigation
+    name: Navigation
+    propagateEntries: true
+    siteSettings:
+      041d1c44-605d-431b-82cd-b8eef9c116ea:
+        enabledByDefault: true
+        hasUrls: false
+        template: null
+        uriFormat: null
+    structure:
+      maxLevels: ''
+      uid: e21d498d-f7b4-4127-927b-77b0890f546c
+    type: structure
   8941eb05-fc03-4475-b7f4-5251d675eb65:
     enableVersioning: true
     entryTypes:

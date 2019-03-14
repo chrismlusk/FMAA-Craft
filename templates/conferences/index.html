@@ -1,0 +1,17 @@
+{# ================================================================== #}
+{# Conference list
+{# ================================================================== #}
+
+{% extends "_layout" %}
+
+{% block content %}
+  {% set conferences = craft.entries().section('conferences').all() %}
+
+  <ul>
+    {% for conference in conferences %}
+      <li>
+        <a href="/conferences/{{conference.slug}}">{{conference.title}}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
