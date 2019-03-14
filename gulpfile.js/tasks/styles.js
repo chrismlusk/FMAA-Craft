@@ -21,7 +21,7 @@ function lintStyles() {
     .pipe(stylelint({
       failAfterError: true,
       fix: true,
-      // reporters: [{ formatter: 'verbose', console: true }],
+      reporters: [{ formatter: 'verbose', console: true }],
     }));
 }
 
