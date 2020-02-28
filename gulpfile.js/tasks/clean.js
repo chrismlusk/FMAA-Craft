@@ -1,19 +1,18 @@
-const gulp = require('gulp');
-const del = require('del');
+const gulp = require("gulp");
+const del = require("del");
 
-const { paths } = require('../config');
+const { paths } = require("../config");
 
 const cleanTask = () => {
-  const allCompiledFiles = [
-    `.tmp/`,
-    `${paths.dest}/*`,
-    `!${paths.dest}/.git`,
-  ];
+  const allCompiledFiles = [`.tmp/`, `${paths.dest}/*`, `!${paths.dest}/.git`];
 
-  return del(process.env.ENVIRONMENT === 'production' ? ['.tmp/'] : allCompiledFiles, {
-    force: true,
-  });
+  return del(
+    process.env.ENVIRONMENT === "production" ? [".tmp/"] : allCompiledFiles,
+    {
+      force: true,
+    }
+  );
 };
 
-gulp.task('clean', cleanTask);
+gulp.task("clean", cleanTask);
 module.exports = cleanTask;

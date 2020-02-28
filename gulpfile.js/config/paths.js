@@ -4,7 +4,7 @@ module.exports = {
 
   static: {
     src: "./src/static",
-    dest: "./web/public"
+    dest: "./web/public",
   },
 
   fonts: {
