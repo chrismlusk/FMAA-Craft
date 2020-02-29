@@ -28,7 +28,7 @@ module.exports = {
   },
 
   scripts: {
-    src: "./src/scripts",
+    src: "./src/scripts/index.js",
     dest: "./web/public/scripts",
   },
 };

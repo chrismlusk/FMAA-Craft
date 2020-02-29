@@ -4,6 +4,8 @@ Thumbs.db
 
 # CRAFT ENVIRONMENT
 .env
+/storage/config-backups/
+/storage/config-backups/*
 
 # COMPOSER
 /vendor
@@ -38,3 +40,6 @@ Thumbs.db
 .vscode
 config.codekit3
 prepros-6.config
+
+# BLITZ CACHING
+/web/cache/blitz/

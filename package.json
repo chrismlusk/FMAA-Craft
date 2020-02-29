@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Craft 3 website for Friendship Madness",
   "author": "Chris Lusk",
-  "license": "ISC",
+  "license": "MIT",
   "main": "gulpfile.js/index.js",
   "homepage": "http://friendshipmadness.com",
   "repository": {
