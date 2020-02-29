@@ -5,7 +5,7 @@
 const gulpSass = {
   options: {
     precision: 6,
-    outputStyle: 'nested',
+    outputStyle: "nested",
   },
 };
 
@@ -27,7 +27,7 @@ const cleanCss = {
   options: {
     level: 1,
     format: {
-      breaksWith: 'lf',
+      breaksWith: "lf",
     },
   },
 };
@@ -36,7 +36,7 @@ const cleanCss = {
  * IMAGEMIN
  * https://github.com/sindresorhus/gulp-imagemin
  */
-const imageminPlugin = require('gulp-imagemin');
+const imageminPlugin = require("gulp-imagemin");
 const imagemin = {
   plugins: [
     imageminPlugin.gifsicle({
