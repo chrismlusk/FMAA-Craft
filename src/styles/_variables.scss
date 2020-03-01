@@ -1,16 +1,205 @@
-// =============================================================================
-// Sass MQ
-// =============================================================================
+//
+// Sass MQ breakpoints
+// ===================
+//
+// https://sass-mq.github.io/sass-mq/#undefined-variable-mq-breakpoints
+// ----------------------------------------------------------------------------
 
 $mq-breakpoints: (
-  small: 500px,
-  medium: 768px,
-  large: 1024px,
-  xlarge: 1280px
+  xs: 448px,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1408px,
 );
 
-// displays the currently active breakpoint in the top right corner
-// remove this if you don't want it there, or if you only want it to appear
-// for certain breakpoints, replace it with a list of those breakpoints
-// e.g. (small, large, xlarge)
+// Displays the currently active breakpoint in the top right corner.
+// Remove this if you don't want it there. If you only want certain
+// breakpoints, replace it with a list, e.g. (small, large, xlarge).
 $mq-show-breakpoints: map-keys($mq-breakpoints);
+
+
+
+
+//
+// RFS configuration
+// =================
+//
+// https://github.com/twbs/rfs/blob/master/scss.scss
+// ----------------------------------------------------------------------------
+
+// $rfs-base-value: 1rem;
+$rfs-breakpoint: map-get($mq-breakpoints, "xl");
+
+// Import _after_ the variable overrides because the library breaks otherwise.
+@import "rfs/scss";
+
+
+
+
+//
+// Color system
+// ============
+
+// I like having these variables as a baseline
+// They are for reference; I try not to use these in other files.
+// The value after the dash matches the start of the hex code.
+$gray-f6:   #f6f6f6;
+$gray-f4:   #f4f4f4;
+$gray-f2:   #f2f2f2;
+$gray-f0:   #f0f0f0;
+$gray-e:    #eaeaea;
+$gray-d:    #d6d6d6;
+$gray-c:    #c8c8c8;
+$gray-b:    #b7b7b7;
+$gray-a:    #a8a8a8;
+$gray-9:    #929292;
+$gray-8:    #848484;
+$gray-7:    #717171;
+$gray-6:    #606060;
+$gray-5:    #525252;
+$gray-4:    #414141;
+$gray-3:    #303030;
+$gray-2:    #212121;
+$gray-1:    #131313;
+
+
+// Assign the baseline variables to a color palette.
+// The lower the number, the lighter the color.
+// These are the variables I use for brand colors.
+$white:     #fff;
+$gray-050:  $gray-f4;
+$gray-100:  $gray-f0;
+$gray-200:  $gray-e;
+$gray-300:  $gray-c;
+$gray-400:  $gray-b;
+$gray-500:  $gray-9;
+$gray-600:  $gray-7;
+$gray-700:  $gray-6;
+$gray-800:  $gray-3;
+$gray-900:  $gray-1;
+$black:     #000;
+
+$fmaa-blue-dark:    #172e42;
+$fmaa-blue-light:   #1171b6;
+$fmaa-red:          #c81322;
+
+
+
+//
+// Typography
+// ==========
+
+$font-family-sans-serif:      -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+$font-family-serif:           Georgia, serif;
+$font-family-mono:            Georgia, serif;
+
+$font-family-base:        $font-family-sans-serif;
+
+$font-size-base:          1rem; // 16px
+
+$font-size-xs:            $font-size-base * .75;
+$font-size-sm:            $font-size-base * .875;
+$font-size-md:            $font-size-base * 1;
+$font-size-lg:            $font-size-base * 1.125;  // 18px
+$font-size-xl:            $font-size-base * 1.25;   // 20px
+$font-size-2xl:           $font-size-base * 1.75;   // 28px
+$font-size-3xl:           $font-size-base * 2.25;   // 36px
+$font-size-4xl:           $font-size-base * 3;      // 48px
+
+$font-weight-light:       300;
+$font-weight-normal:      400;
+$font-weight-medium:      500;
+$font-weight-semi-bold:   600;
+$font-weight-bold:        700;
+$font-weight-black:       900;
+
+$line-height-tight:       1.25;
+$line-height-base:        1.5;
+$line-height-loose:       1.75;
+
+$h1-font-size:            $font-size-4xl;
+$h2-font-size:            $font-size-3xl;
+$h3-font-size:            $font-size-2xl;
+$h4-font-size:            $font-size-xl;
+$h5-font-size:            $font-size-lg;
+$h6-font-size:            $font-size-md;
+
+
+
+
+//
+// Transitions
+// ===========
+
+$transition-timing-function: ease-in;
+$transition-duration: 145ms;
+
+
+
+
+//
+// Links
+// =====
+
+$link-color:              $fmaa-blue-light;
+$link-border-color:       lighten($fmaa-blue-light, 48%);
+
+$link-hover-color:        darken($fmaa-blue-dark, 8%);
+$link-hover-bg:           lighten($fmaa-blue-light, 54.5%);
+$link-hover-border-color: currentColor;
+
+
+
+
+//
+// Z-index
+// =======
+
+$z-index-1:   100;
+$z-index-2:   200;
+$z-index-3:   300;
+$z-index-4:   400;
+$z-index-5:   500;
+$z-index-6:   600;
+$z-index-7:   700;
+$z-index-8:   800;
+$z-index-9:   900;
+$z-index-10:  1000;
+
+
+
+
+//
+// CSS variables
+// =============
+
+:root {
+
+  //
+  // Base
+  // ====
+
+  --body-bg: #{$white};
+  --body-color: #{$gray-900};
+
+  --header-height: 60px;
+  --flow-space: 1em;
+
+
+
+
+  //
+  // Grid
+  // ====
+
+  --grid-columns: 10;
+  --gutter: 1rem;
+
+  @include mq(lg) {
+    --grid-columns: 14;
+    --gutter: 2rem;
+  }
+
+}

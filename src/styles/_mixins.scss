@@ -1,0 +1,183 @@
+// ============================================================================
+//
+//  Mixins
+//
+//  --
+//
+//  [Table of Contents]
+//
+//  - Eyebrow
+//  - Focus style
+//  - Heading
+//  - Image hover effect
+//  - Tabular numbers
+//  - Transition
+//  - Visually hidden
+//
+// ============================================================================
+
+
+
+
+//
+// Eyebrow
+// =======
+
+@mixin eyebrow() {
+  font-size: $font-size-sm;
+  font-weight: 700;
+  line-height: $line-height-tight;
+  letter-spacing: .0875em;
+  text-transform: uppercase;
+}
+
+
+
+
+//
+// Focus style
+// ===========
+//
+// Pass "inside" as the mixin parameter for buttons and button-like elements.
+// ----------------------------------------------------------------------------
+
+@mixin focus-style($position: "outside") {
+  $offset: null;
+  @if ($position == "inside") {
+    $offset: -0.375em;
+  } @else {
+    $offset: .25em;
+  }
+
+  outline: 1px dotted;
+  outline-offset: $offset;
+}
+
+
+
+
+//
+// Headings
+// ========
+
+@mixin heading($heading: null) {
+  $tag: null;
+  @if ($heading) {
+    $tag: $heading;
+  } @else {
+    $tag: "h3";
+  }
+
+  line-height: $line-height-tight;
+  font-weight: $font-weight-bold;
+
+  & > a:not([class]) {
+    color: inherit;
+    text-decoration: inherit;
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+
+  @if ($tag == "h1") {
+    @include font-size($h1-font-size);
+  }
+
+  @if ($tag == "h2") {
+    @include font-size($h2-font-size);
+  }
+
+  @if ($tag == "h3") {
+    @include font-size($h3-font-size);
+  }
+
+  @if ($tag == "h4") {
+    @include font-size($h4-font-size);
+  }
+
+  @if ($tag == "h5") {
+    @include font-size($h5-font-size);
+  }
+
+  @if ($tag == "h6") {
+    @include font-size($h6-font-size);
+  }
+}
+
+
+
+
+//
+// Image hover effect
+// ==================
+//
+// Add a slight zoom/fade effect to images within the target element.
+// ----------------------------------------------------------------------------
+
+@mixin image-hover-effect() {
+  img {
+    transition-timing-function: $transition-timing-function;
+    transition-duration: $transition-duration * 5;
+    transition-property: opacity, transform;
+  }
+
+  &:hover img {
+    opacity: .75;
+    transition-duration: $transition-duration * 10;
+  }
+}
+
+
+
+
+//
+// Tabular numbers
+// ===============
+
+@mixin tnum() {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+
+
+
+//
+// Transition
+// ==========
+//
+// Helper for using transitions with the base timing function and duration.
+// When you only want to change which properties are being targeted.
+//
+// @param $properties - comma-separated list of properties (defaults to "all")
+// ----------------------------------------------------------------------------
+
+@mixin transition($properties...) {
+  transition-timing-function: $transition-timing-function;
+  transition-duration: $transition-duration;
+
+  @if ($properties) {
+    transition-property: $properties;
+  } @else {
+    transition-property: all;
+  }
+}
+
+
+
+//
+// Visually hidden
+// ===============
+
+@mixin visually-hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

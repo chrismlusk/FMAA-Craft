@@ -1,1 +1,30 @@
-{}
+{
+  "extends": [],
+  "ignoreFiles": [
+    "src/styles/utils/**/*.scss"
+  ],
+  "defaultSeverity": "warning",
+  "rules": {
+    "color-hex-case": "lower",
+    "max-empty-lines": 4,
+    "no-extra-semicolons": true,
+    "selector-max-id": 1,
+    "selector-max-type": [
+      4,
+      {
+        "ignore": [
+          "next-sibling"
+        ]
+      }
+    ],
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": [
+          "attribute",
+          "class"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+dateModified: 1583074556
+email:
+  fromEmail: chris.m.lusk@gmail.com
+  fromName: FMAA
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  2ce6378e-6017-4bbd-b30c-35dc9e4193c6:
+    name: Common
+  cd0fcc42-ce33-4482-afc1-369a1e92384e:
+    name: Home
+fields:
+  58d2f9b9-c4e1-459d-b2c9-e95ef54029d6:
+    contentColumnType: string
+    fieldGroup: cd0fcc42-ce33-4482-afc1-369a1e92384e
+    handle: billboard
+    instructions: ''
+    name: Billboard
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_billboard}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+matrixBlockTypes:
+  b6f89799-47f1-4156-8f6d-874bce458a0d:
+    field: 58d2f9b9-c4e1-459d-b2c9-e95ef54029d6
+    fieldLayouts:
+      28ac25e0-e768-490c-aa94-553edaf12a9b:
+        tabs:
+          -
+            fields:
+              2e10c521-8e1c-40a1-abc4-6584fc81191e:
+                required: false
+                sortOrder: 2
+              35835195-26f0-4067-99d7-fabfb9876176:
+                required: true
+                sortOrder: 3
+              a5671027-06f4-4211-bb81-b734092ebb98:
+                required: false
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      2e10c521-8e1c-40a1-abc4-6584fc81191e:
+        contentColumnType: string(560)
+        fieldGroup: null
+        handle: headline
+        instructions: ''
+        name: Headline
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: 140
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+      35835195-26f0-4067-99d7-fabfb9876176:
+        contentColumnType: text
+        fieldGroup: null
+        handle: embedUrl
+        instructions: ''
+        name: 'Embed URL'
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: null
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+      a5671027-06f4-4211-bb81-b734092ebb98:
+        contentColumnType: string(160)
+        fieldGroup: null
+        handle: eyebrow
+        instructions: ''
+        name: Eyebrow
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: 40
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+    handle: twitterFeed
+    name: 'Twitter Feed'
+    sortOrder: 1
+plugins:
+  assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  aws-s3:
+    edition: standard
+    enabled: true
+    schemaVersion: '1.2'
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  typogrify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+sections:
+  7e56c825-76fa-4fdf-bb95-a7cfc46a3ee7:
+    enableVersioning: true
+    entryTypes:
+      019343a3-740f-402a-aaa2-d07e6f2a18d1:
+        fieldLayouts:
+          57536709-757b-4cc0-89a7-743fc17f21e5:
+            tabs:
+              -
+                fields:
+                  58d2f9b9-c4e1-459d-b2c9-e95ef54029d6:
+                    required: false
+                    sortOrder: 1
+                name: Content
+                sortOrder: 1
+        handle: home
+        hasTitleField: false
+        name: Home
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: ''
+    handle: home
+    name: Home
+    propagationMethod: all
+    siteSettings:
+      06ce3fb4-519b-42d7-a2a1-922a0c2816af:
+        enabledByDefault: true
+        hasUrls: true
+        template: index
+        uriFormat: __home__
+    type: single
+siteGroups:
+  61bb2a84-2ca3-4bcd-a8c4-1492277355f4:
+    name: FMAA
+sites:
+  06ce3fb4-519b-42d7-a2a1-922a0c2816af:
+    baseUrl: $DEFAULT_SITE_URL
+    handle: default
+    hasUrls: true
+    language: en-US
+    name: FMAA
+    primary: true
+    siteGroup: 61bb2a84-2ca3-4bcd-a8c4-1492277355f4
+    sortOrder: 1
+system:
+  edition: solo
+  live: true
+  name: FMAA
+  schemaVersion: 3.4.10
+  timeZone: America/Chicago
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

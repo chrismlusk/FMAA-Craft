@@ -13,12 +13,11 @@
     "start": "npm-run-all --parallel watch:*",
     "lint": "npm-run-all --parallel lint:*",
     "lint:scripts": "eslint $npm_package_config_SRC/scripts/**/*.js",
-    "lint:styles": "stylelint $npm_package_config_SRC/styles/**/*.scss",
+    "lint:styles": "stylelint $npm_package_config_SRC/styles/**/*.scss --fix",
     "optimize:images": "imagemin $npm_package_config_DIST/images --out-dir=$npm_package_config_DIST/images",
     "build": "npm-run-all --parallel lint:* --serial 'compile:assets -- --mode=production' optimize:*",
     "watch:assets": "webpack -w",
-    "watch:markup": "chokidar $npm_package_config_TEMPLATES/**/*.html -c 'browser-sync reload'",
-    "wat": "node ./compiler.js"
+    "watch:markup": "chokidar $npm_package_config_TEMPLATES/**/*.html -c 'browser-sync reload'"
   },
   "repository": {
     "type": "git",
@@ -38,6 +37,7 @@
   ],
   "dependencies": {
     "dotenv": "^8.2.0",
+    "rfs": "^9.0.2",
     "sass-mq": "^5.0.1"
   },
   "devDependencies": {

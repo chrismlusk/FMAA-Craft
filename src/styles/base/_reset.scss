@@ -1,0 +1,152 @@
+//
+// CSS reset
+// =========
+//
+// Credit: https://hankchizljaw.com/wrote/a-modern-css-reset
+// ----------------------------------------------------------------------------
+
+// Box sizing rules
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Remove default padding
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+// Remove default margin
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote {
+  margin: 0;
+}
+
+// Set core body defaults
+//
+// 1. Prevent font size adjustment when screen orientation changes.
+// 2. Change default tap highlight to be transparent on iOS.
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  color: var(--body-color);
+  background-color: var(--body-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-text-size-adjust: 100%; // 1
+  -webkit-text-size-adjust: 100%; // 1
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // 2
+}
+
+// Remove list styles on ul, ol elements with a class attribute
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+// Link defaults
+a {
+  color: currentColor;
+  text-decoration: none;
+  @include transition(color);
+}
+
+// Defaults for `a` elements that don't have a class
+a:not([class]) {
+  color: $link-color;
+  border-bottom: 1px solid $link-border-color;
+  transition-property: background-color, border-color, color;
+
+  &:hover {
+    color: $link-hover-color;
+    background-color: $link-hover-bg;
+    border-bottom-color: $link-hover-border-color;
+  }
+
+  &:active {
+    border-bottom-style: dashed;
+  }
+}
+
+// Make images easier to work with
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// SVG defaults
+//
+// 1. Fix overflow bug in IE 11
+svg {
+  overflow: hidden; // 1
+  vertical-align: middle;
+}
+
+// Focus styles
+:focus {
+  @include focus-style();
+}
+
+// Elements excluded from the tabindex don't get focus styles
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+// No focus styles on links or buttons that are both focused AND hovered
+a,
+button {
+  &:focus:hover {
+    outline: none;
+  }
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+// Future-proofing: In browsers that support `:focus-visible`, suppress the
+// focus outline on elements that programmatically receive focus but wouldn't
+// normally show a visible focus outline. In general, this means the outline
+// is only applied if what led to focus was a keyboard interaction, or the
+// browser has somehow determined that the user is primarily a keyboard user
+// and/or wants focus outlines to always be presented.
+//
+// See https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible
+// and https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility
+
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: 0 !important;
+}
+
+// Selection styles
+::selection {
+  color: var(--body-color);
+  background-color: $gray-300;
+}
+
+// Remove animations and transitions for people who prefer not to see them
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,15 @@
+//
+// Wrapper and base class
+// ======================
+
+.image {
+  padding-top: 100%; // 1:1 aspect ratio by default
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  img {
+    user-select: none;
+    object-fit: cover;
+  }
+}

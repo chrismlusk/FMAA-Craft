@@ -1,32 +1,25 @@
-.story-card {}
-
-
-
+.story-card {
+}
 
 //
 // Image
 // =====
 
-.story-card__image {}
-
-
-
+.story-card__image {
+}
 
 //
 // Content
 // =======
 
-.story-card__content {}
-
-
-
+.story-card__content {
+}
 
 //
 // Variation: Featured
 // ===================
 
 .story-card--featured {
-
   .story-card__content {
     width: 85%;
     margin-top: -3.4rem;
@@ -36,13 +29,9 @@
   }
 }
 
-
-
-
 //
 // Variation: Teaser
 // =================
 
 .story-card--teaser {
-
 }

@@ -1,0 +1,10 @@
+.skip-link {
+  cursor: pointer;
+  border: 3px solid;
+  background-color: $white;
+  z-index: 1000;
+
+  &:not(:focus) {
+    @include visually-hidden();
+  }
+}

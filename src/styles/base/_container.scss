@@ -1,0 +1,10 @@
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--gutter);
+  padding-left: var(--gutter);
+
+  &:focus {
+    outline: none;
+  }
+}
