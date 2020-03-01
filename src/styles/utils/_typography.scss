@@ -1,0 +1,136 @@
+//
+// Font size
+// =========
+
+.fs-xs  { @include font-size(var(--font-size-xs)) }
+.fs-sm  { @include font-size(var(--font-size-sm)) }
+.fs-md  { @include font-size(var(--font-size-md)) }
+.fs-lg  { @include font-size(var(--font-size-lg)) }
+.fs-xl  { @include font-size(var(--font-size-xl)) }
+.fs-2xl { @include font-size(var(--font-size-2xl)) }
+.fs-3xl { @include font-size(var(--font-size-3xl)) }
+
+
+
+
+//
+// Headings
+// ========
+//
+// Update styles in `styles/_mixins.scss`
+// ----------------------------------------------------------------------------
+
+.h1 {
+  @include heading(h1);
+}
+
+.h2 {
+  @include heading(h2);
+}
+
+.h3 {
+  @include heading(h3);
+}
+
+.h4 {
+  @include heading(h4);
+}
+
+.h5 {
+  @include heading(h5);
+}
+
+.h6 {
+  @include heading(h6);
+}
+
+
+
+
+//
+// Eyebrow
+// =======
+
+.eyebrow {
+  // @include eyebrow;
+}
+
+
+
+//
+// Body copy
+// =========
+
+.body-copy {
+  // font-family: $font-family-body-copy;
+}
+
+
+
+
+//
+// Blockquote
+// ==========
+
+%blockquote {
+  position: relative;
+  padding: .25em 1.5em;
+  font-size: 1.125em; // relative to its parent
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: .25rem;
+    background: var(--gray-400);
+    border-radius: .25rem;
+  }
+}
+
+
+
+
+//
+// Formatting
+// ==========
+
+.caps {
+  text-transform: uppercase;
+}
+
+.fw-xb {
+  font-weight: 900;
+}
+
+.fw-b {
+  font-weight: 700;
+}
+
+.fw-sb {
+  font-weight: 600;
+}
+
+.fw-m {
+  font-weight: 500;
+}
+
+.fw-n {
+  font-weight: 400;
+}
+
+.tnum {
+  // @include tnum();
+}
+
+
+
+
+//
+// Flow and rhythm
+// ===============
+
+.flow > * + * {
+  margin-top: var(--flow-space);
+}

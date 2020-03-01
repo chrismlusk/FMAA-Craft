@@ -1,0 +1,38 @@
+//
+// Wrapper and base class
+// ======================
+
+.site {}
+
+
+
+
+//
+// Header
+// ======
+
+.site__header {
+  height: var(--header-height);
+}
+
+
+
+
+//
+// Main
+// ====
+
+.site__main {
+  margin-top: var(--header-height);
+}
+
+
+
+
+//
+// Footer
+// ======
+
+.site__footer {
+
+}

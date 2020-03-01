@@ -1,0 +1,74 @@
+{
+  "name": "fmaa",
+  "version": "1.0.0",
+  "description": "Craft 3 website for Friendship Madness",
+  "main": "main.js",
+  "config": {
+    "DIST": "web/dist",
+    "SRC": "src",
+    "TEMPLATES": "templates"
+  },
+  "scripts": {
+    "compile:assets": "webpack",
+    "start": "npm-run-all --parallel watch:*",
+    "lint": "npm-run-all --parallel lint:*",
+    "lint:scripts": "eslint $npm_package_config_SRC/scripts/**/*.js",
+    "lint:styles": "stylelint $npm_package_config_SRC/styles/**/*.scss",
+    "optimize:images": "imagemin $npm_package_config_DIST/images --out-dir=$npm_package_config_DIST/images",
+    "build": "npm-run-all --parallel lint:* --serial 'compile:assets -- --mode=production' optimize:*",
+    "watch:assets": "webpack -w",
+    "watch:markup": "chokidar $npm_package_config_TEMPLATES/**/*.html -c 'browser-sync reload'",
+    "wat": "node ./compiler.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrismlusk/FMAA-Craft.git"
+  },
+  "author": "Chris Lusk <chris.m.lusk@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrismlusk/FMAA-Craft/issues"
+  },
+  "homepage": "https://github.com/chrismlusk/FMAA-Craft#readme",
+  "browserslist": [
+    "last 1 version",
+    "not dead",
+    ">0.25%",
+    "not ie 11"
+  ],
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "sass-mq": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "chokidar": "^3.3.1",
+    "chokidar-cli": "^2.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "file-loader": "^5.1.0",
+    "imagemin-cli": "^5.1.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.2",
+    "stylelint": "^13.2.0",
+    "terser-webpack-plugin": "^2.3.5",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-manifest-plugin": "^2.2.0"
+  }
+}

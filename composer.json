@@ -1,0 +1,53 @@
+{
+  "name": "onedesign/craft-starter",
+  "description": "Craft CMS",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "project"
+  ],
+  "license": "Unlicense",
+  "homepage": "https://craftcms.com/",
+  "type": "project",
+  "support": {
+    "email": "support@craftcms.com",
+    "issues": "https://github.com/craftcms/cms/issues",
+    "forum": "https://craftcms.stackexchange.com/",
+    "source": "https://github.com/craftcms/cms",
+    "docs": "https://craftcms.com/docs",
+    "rss": "https://craftcms.com/changelog.rss"
+  },
+  "require": {
+    "craftcms/cms": "^3.4.0",
+    "craftcms/redactor": "v2.x-dev",
+    "vlucas/phpdotenv": "^3.4.0",
+    "clubstudioltd/craft-asset-rev": "^6.0",
+    "craftcms/aws-s3": "^1.0",
+    "nystudio107/craft-typogrify": "^1.1",
+    "topshelfcraft/environment-label": "^3.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "modules\\": "modules/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "7.0"
+    }
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "@php -r \"copy('.env.example', '.env');\"",
+      "@php -r \"unlink('composer.json');\"",
+      "@php -r \"unlink('LICENSE.md');\"",
+      "@php -r \"unlink('README.md');\"",
+      "@php -r \"rename('composer.json.default', 'composer.json');\"",
+      "@composer dump-autoload -o",
+      "npm install",
+      "@php craft setup/welcome"
+    ]
+  }
+}

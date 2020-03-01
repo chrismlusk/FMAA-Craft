@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FMAA!!!</title>
+  <link rel="stylesheet" href="{{ rev('main.css') }}">
+</head>
+
+<body class="{{ bodyClass | default('') }}">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  {% include "_partials/header" %}
+  <main class="site__main" id="main-content" tabindex="-1" role="main">
+    {% block content %}{% endblock %}
+    {% include "_partials/footer" %}
+  </main>
+  <script src="{{ rev('main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+//
+// News billboard
+// ==============
+//
+// On large screens, a three-column layout with a half-width featured item,
+// a skinny rail, and a medium column. A one-column layout on small screens.
+// ----------------------------------------------------------------------------
+
+.billboard--news {
+
+  @include mq(lg) {
+    height: 100vh;
+  }
+
+  .grid__column {
+    @include mq($until: lg) {
+      &:nth-child(1) {
+        grid-column: 1 / span 5;
+      }
+
+      &:nth-child(2) {
+        grid-column: 6 / span 2;
+      }
+
+      &:nth-child(3) {
+        grid-column: 8 / span 3;
+      }
+    }
+
+    @include mq(lg) {
+      &:nth-child(1) {
+        grid-column: 1 / span 7;
+      }
+
+      &:nth-child(2) {
+        grid-column: 8 / span 3;
+      }
+
+      &:nth-child(3) {
+        grid-column: 11 / span 4;
+      }
+    }
+  }
+
+  .twitter-timeline {
+    height: 100% !important;
+  }
+}

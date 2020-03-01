@@ -1,0 +1,32 @@
+{# ================================================================== #}
+{# Homepage
+{# ================================================================== #}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+<section class="section billboard billboard--news">
+  <div class="grid container h100">
+    <div class="grid__column">
+      <div class="story-card story-card--featured">
+        <a href="#" class="story-card__link d-block">
+          <div class="story-card__image image rel">
+            <img class="abs fill w100 h100" src="https://placekitten.com/g/700/500" alt="" />
+          </div>
+          <div class="story-card__content rel bg-white">
+            <div class="story-card__title h2">Friendship: Are Kittens Cute or Terrifying?</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="grid__column">Two</div>
+    <div class="grid__column">
+      <div class="h2">Friendly dispatches</div>
+      <a class="twitter-timeline"href="https://twitter.com/FriendMadness?ref_src=twsrc%5Etfw">Tweets by @FriendMadness</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

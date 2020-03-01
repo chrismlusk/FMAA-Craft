@@ -1,0 +1,89 @@
+//
+// Wrapper and base class
+// ======================
+
+.navbar {
+  padding-right: 1em;
+}
+
+
+
+
+//
+// Logo
+// ====
+
+.navbar__logo {
+  --navbar-logo-bg: var(--fmaa-blue-light);
+  --navbar-logo-padding: .875em 1em;
+  --logo-width: 90px;
+  --logo-scale: 1;
+  --logo-rotate: 0deg;
+
+  &:hover {
+    --logo-rotate: -2deg;
+  }
+
+  &:active {
+    --logo-scale: 1.06;
+  }
+
+  @include mq(lg) {
+    --logo-width: 104px;
+  }
+
+  padding: var(--navbar-logo-padding);
+  background-color: var(--navbar-logo-bg);
+
+  .svg--logo {
+    width: var(--logo-width);
+    transform: scale(var(--logo-scale)) rotate(var(--logo-rotate));
+    @include transition(transform);
+  }
+}
+
+
+
+
+//
+// Menu
+// ====
+
+.navbar__menu {
+
+  @include mq(md) {
+    margin-left: .5rem;
+  }
+
+  .navbar__link {
+    padding: .75em;
+  }
+
+  &:hover {
+    .navbar__link {
+      color: rgba($white, .6);
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+
+
+
+//
+// Tagline
+// =======
+
+.navbar__tagline {
+  margin-left: auto;
+  opacity: .4;
+
+  .svg--logo {
+    @include mq(md) {
+      width: 220px;
+    }
+  }
+}
