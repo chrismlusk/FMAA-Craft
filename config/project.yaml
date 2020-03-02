@@ -1,14 +1,128 @@
-dateModified: 1583074556
+categoryGroups:
+  881d0ac5-2c19-4b56-823c-1d5877d65c14:
+    fieldLayouts:
+      fb607942-3aa2-4c2e-8488-2b51448c4d67:
+        tabs:
+          -
+            fields:
+              72ec44d0-1a5d-4c0a-81b9-9da5ef189896:
+                required: false
+                sortOrder: 1
+            name: Team
+            sortOrder: 1
+    handle: teams
+    name: Teams
+    siteSettings:
+      06ce3fb4-519b-42d7-a2a1-922a0c2816af:
+        hasUrls: true
+        template: ''
+        uriFormat: 'teams/{slug}'
+    structure:
+      maxLevels: null
+      uid: cbddd70c-eaac-4733-8e06-17dc980f3da3
+  9f48a4fa-a19c-4657-a251-4c82252122e3:
+    handle: years
+    name: Years
+    siteSettings:
+      06ce3fb4-519b-42d7-a2a1-922a0c2816af:
+        hasUrls: true
+        template: ''
+        uriFormat: 'years/{slug}'
+    structure:
+      maxLevels: null
+      uid: feaf23a7-9657-4962-bdfa-6b596b4e33cf
+dateModified: 1583101838
 email:
   fromEmail: chris.m.lusk@gmail.com
   fromName: FMAA
   transportType: craft\mail\transportadapters\Sendmail
 fieldGroups:
+  04b2e8eb-4415-4417-8848-841de3f4bbd5:
+    name: Team
   2ce6378e-6017-4bbd-b30c-35dc9e4193c6:
     name: Common
+  7037063e-db09-4cd5-80af-da43727ff908:
+    name: Friend
   cd0fcc42-ce33-4482-afc1-369a1e92384e:
     name: Home
+  ce34a507-5b23-41a2-8026-f611d904d767:
+    name: Conference
+  dd3c2c0c-9040-49bb-95c9-bbf059d0e496:
+    name: Year
 fields:
+  01de727a-120f-41c4-bac5-62c3dff953a7:
+    contentColumnType: text
+    fieldGroup: 7037063e-db09-4cd5-80af-da43727ff908
+    handle: firstName
+    instructions: ''
+    name: 'First Name'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  0c8102b2-66c2-4b3c-ba88-ac95ba27b656:
+    contentColumnType: string
+    fieldGroup: dd3c2c0c-9040-49bb-95c9-bbf059d0e496
+    handle: Bracket
+    instructions: ''
+    name: Bracket
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_bracket}}'
+      maxBlocks: '4'
+      minBlocks: '4'
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  2c6375f4-2216-44a3-ae73-1d2e5bd01e58:
+    contentColumnType: text
+    fieldGroup: 7037063e-db09-4cd5-80af-da43727ff908
+    handle: twitterHandle
+    instructions: 'No `@` needed'
+    name: 'Twitter Handle'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  4d1d8a01-0b3d-409c-a6ff-a80950091a0a:
+    contentColumnType: string
+    fieldGroup: 7037063e-db09-4cd5-80af-da43727ff908
+    handle: fmaaHistory
+    instructions: 'The years this friend has been included'
+    name: 'FMAA History'
+    searchable: false
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      branchLimit: ''
+      limit: null
+      localizeRelations: false
+      selectionLabel: 'Add a year'
+      source: 'group:9f48a4fa-a19c-4657-a251-4c82252122e3'
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: ''
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
   58d2f9b9-c4e1-459d-b2c9-e95ef54029d6:
     contentColumnType: string
     fieldGroup: cd0fcc42-ce33-4482-afc1-369a1e92384e
@@ -24,6 +138,138 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
+  72ec44d0-1a5d-4c0a-81b9-9da5ef189896:
+    contentColumnType: string(60)
+    fieldGroup: 04b2e8eb-4415-4417-8848-841de3f4bbd5
+    handle: shortName
+    instructions: 'Use if the team name is long and there is a clear, sensible abbreviation.'
+    name: 'Short Name'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: 15
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  997760dd-6ecc-4c4a-9b4b-7ca2d5c4e1b5:
+    contentColumnType: string
+    fieldGroup: 7037063e-db09-4cd5-80af-da43727ff908
+    handle: friendImage
+    instructions: ''
+    name: 'Friend Image'
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:a2d6ba02-9cae-41d6-acf7-9a7c5d267da7'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:a2d6ba02-9cae-41d6-acf7-9a7c5d267da7'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  d7ca5f00-422d-4df0-aba0-6ab2ad19c038:
+    contentColumnType: text
+    fieldGroup: 7037063e-db09-4cd5-80af-da43727ff908
+    handle: lastName
+    instructions: ''
+    name: 'Last Name'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e665a092-60f3-48e4-aa4e-4b396d5d8841:
+    contentColumnType: string
+    fieldGroup: 7037063e-db09-4cd5-80af-da43727ff908
+    handle: fmaaMvp
+    instructions: ''
+    name: 'FMAA MVP'
+    searchable: false
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      branchLimit: ''
+      limit: null
+      localizeRelations: false
+      selectionLabel: 'Add a year'
+      source: 'group:9f48a4fa-a19c-4657-a251-4c82252122e3'
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: ''
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
+  e7ea6d3f-3027-4faf-95b6-3a3159112149:
+    contentColumnType: text
+    fieldGroup: 7037063e-db09-4cd5-80af-da43727ff908
+    handle: friendBio
+    instructions: 'Written in the first person from the commissioner''s perspective. '
+    name: 'Friend Bio'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  f133588b-cd47-42e2-97aa-63a45c45ec27:
+    contentColumnType: string
+    fieldGroup: 7037063e-db09-4cd5-80af-da43727ff908
+    handle: fmaaTitle
+    instructions: ''
+    name: 'FMAA Title'
+    searchable: false
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      branchLimit: ''
+      limit: null
+      localizeRelations: false
+      selectionLabel: 'Add a year'
+      source: 'group:9f48a4fa-a19c-4657-a251-4c82252122e3'
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: ''
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
 matrixBlockTypes:
   b6f89799-47f1-4156-8f6d-874bce458a0d:
     field: 58d2f9b9-c4e1-459d-b2c9-e95ef54029d6
@@ -101,6 +347,61 @@ matrixBlockTypes:
     handle: twitterFeed
     name: 'Twitter Feed'
     sortOrder: 1
+  f6788036-845d-43c8-be33-364933d77ec3:
+    field: 0c8102b2-66c2-4b3c-ba88-ac95ba27b656
+    fieldLayouts:
+      b2b92923-c945-488b-b538-3685a38badbd:
+        tabs:
+          -
+            fields:
+              bdafcd51-2fc1-459a-9b85-ffc2c6872c4c:
+                required: true
+                sortOrder: 2
+              e16dad14-4f96-445a-b308-e60a10de891b:
+                required: true
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      bdafcd51-2fc1-459a-9b85-ffc2c6872c4c:
+        contentColumnType: string
+        fieldGroup: null
+        handle: regionalBracket
+        instructions: ''
+        name: 'Regional Bracket'
+        searchable: true
+        settings:
+          contentTable: '{{%stc_2_regionalbracket}}'
+          fieldLayout: row
+          maxRows: '16'
+          minRows: '16'
+          propagationMethod: all
+          selectionLabel: ''
+          staticField: ''
+        translationKeyFormat: null
+        translationMethod: site
+        type: verbb\supertable\fields\SuperTableField
+      e16dad14-4f96-445a-b308-e60a10de891b:
+        contentColumnType: string(560)
+        fieldGroup: null
+        handle: regionalName
+        instructions: ''
+        name: 'Regional Name'
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: 140
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+    handle: regional
+    name: Regional
+    sortOrder: 1
 plugins:
   assetrev:
     edition: standard
@@ -110,15 +411,97 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: '1.2'
+  feed-me:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.1.2
   redactor:
     edition: standard
     enabled: true
     schemaVersion: 2.3.0
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
   typogrify:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
 sections:
+  3c98419f-29c8-4c9b-97a4-05a4777f06e3:
+    enableVersioning: true
+    entryTypes:
+      7be1698b-aab0-47a5-871c-50e5d9fa6134:
+        handle: years
+        hasTitleField: true
+        name: Years
+        sortOrder: 1
+        titleFormat: null
+        titleLabel: Title
+    handle: years
+    name: Years
+    propagationMethod: all
+    siteSettings:
+      06ce3fb4-519b-42d7-a2a1-922a0c2816af:
+        enabledByDefault: true
+        hasUrls: true
+        template: years/_entry
+        uriFormat: 'years/{slug}'
+    type: channel
+  48195966-592f-4c3e-9893-5e22d3f4d65c:
+    enableVersioning: true
+    entryTypes:
+      60c4974c-723e-45cf-83a4-06410d60baca:
+        fieldLayouts:
+          501f94d9-7084-4158-b000-e14c60413b59:
+            tabs:
+              -
+                fields:
+                  01de727a-120f-41c4-bac5-62c3dff953a7:
+                    required: true
+                    sortOrder: 1
+                  2c6375f4-2216-44a3-ae73-1d2e5bd01e58:
+                    required: false
+                    sortOrder: 3
+                  4d1d8a01-0b3d-409c-a6ff-a80950091a0a:
+                    required: false
+                    sortOrder: 5
+                  997760dd-6ecc-4c4a-9b4b-7ca2d5c4e1b5:
+                    required: false
+                    sortOrder: 4
+                  d7ca5f00-422d-4df0-aba0-6ab2ad19c038:
+                    required: true
+                    sortOrder: 2
+                  e665a092-60f3-48e4-aa4e-4b396d5d8841:
+                    required: false
+                    sortOrder: 7
+                  e7ea6d3f-3027-4faf-95b6-3a3159112149:
+                    required: false
+                    sortOrder: 8
+                  f133588b-cd47-42e2-97aa-63a45c45ec27:
+                    required: false
+                    sortOrder: 6
+                name: Friend
+                sortOrder: 1
+        handle: friends
+        hasTitleField: false
+        name: Friends
+        sortOrder: 1
+        titleFormat: '{firstName} {lastName}'
+        titleLabel: Title
+    handle: friends
+    name: Friends
+    propagationMethod: all
+    siteSettings:
+      06ce3fb4-519b-42d7-a2a1-922a0c2816af:
+        enabledByDefault: true
+        hasUrls: true
+        template: friends/_entry
+        uriFormat: 'friends/{slug}'
+    structure:
+      maxLevels: null
+      uid: 42fb35b1-2499-4e5e-a15c-35e779666535
+    type: structure
   7e56c825-76fa-4fdf-bb95-a7cfc46a3ee7:
     enableVersioning: true
     entryTypes:
@@ -149,6 +532,29 @@ sections:
         template: index
         uriFormat: __home__
     type: single
+  8f5f8e1b-3cc0-4e3f-a82d-a1be41b092a1:
+    enableVersioning: true
+    entryTypes:
+      70ebc6dc-fc41-47df-b9e3-0a7f3023fadf:
+        handle: conferences
+        hasTitleField: true
+        name: Conferences
+        sortOrder: 1
+        titleFormat: null
+        titleLabel: Title
+    handle: conferences
+    name: Conferences
+    propagationMethod: all
+    siteSettings:
+      06ce3fb4-519b-42d7-a2a1-922a0c2816af:
+        enabledByDefault: true
+        hasUrls: true
+        template: conferences/_entry
+        uriFormat: 'conferences/{slug}'
+    structure:
+      maxLevels: null
+      uid: a75efc3d-9965-4380-a2de-6e2f15b87cfa
+    type: structure
 siteGroups:
   61bb2a84-2ca3-4bcd-a8c4-1492277355f4:
     name: FMAA
@@ -162,6 +568,86 @@ sites:
     primary: true
     siteGroup: 61bb2a84-2ca3-4bcd-a8c4-1492277355f4
     sortOrder: 1
+superTableBlockTypes:
+  8d78d598-771e-4186-9250-786a97b01877:
+    field: bdafcd51-2fc1-459a-9b85-ffc2c6872c4c
+    fieldLayouts:
+      73dde55c-218e-4125-95d3-7ff81786144e:
+        tabs:
+          -
+            fields:
+              7bee383f-87a4-49b2-9b36-f500fc50d183:
+                required: true
+                sortOrder: 3
+              b2ca67f8-122c-4b1b-b290-2dded4df50e7:
+                required: true
+                sortOrder: 2
+              c671e723-ddee-4167-88f2-1e985023d676:
+                required: true
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      7bee383f-87a4-49b2-9b36-f500fc50d183:
+        contentColumnType: string
+        fieldGroup: null
+        handle: team
+        instructions: ''
+        name: Team
+        searchable: true
+        settings:
+          allowLimit: false
+          allowMultipleSources: false
+          branchLimit: ''
+          limit: null
+          localizeRelations: false
+          selectionLabel: 'Add a team'
+          source: 'group:881d0ac5-2c19-4b56-823c-1d5877d65c14'
+          sources: '*'
+          targetSiteId: null
+          validateRelatedElements: ''
+          viewMode: null
+        translationKeyFormat: null
+        translationMethod: site
+        type: craft\fields\Categories
+      b2ca67f8-122c-4b1b-b290-2dded4df50e7:
+        contentColumnType: string
+        fieldGroup: null
+        handle: friend
+        instructions: ''
+        name: Friend
+        searchable: true
+        settings:
+          limit: '1'
+          localizeRelations: false
+          selectionLabel: 'Add a friend'
+          source: null
+          sources:
+            - 'section:48195966-592f-4c3e-9893-5e22d3f4d65c'
+          targetSiteId: null
+          validateRelatedElements: ''
+          viewMode: null
+        translationKeyFormat: null
+        translationMethod: site
+        type: craft\fields\Entries
+      c671e723-ddee-4167-88f2-1e985023d676:
+        contentColumnType: string(8)
+        fieldGroup: null
+        handle: seed
+        instructions: ''
+        name: Seed
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: 2
+          code: '1'
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
 system:
   edition: solo
   live: true
@@ -174,3 +660,64 @@ users:
   photoSubpath: ''
   photoVolumeUid: null
   requireEmailVerification: true
+volumes:
+  65127a75-7c64-410e-8dd7-dfa75c3448c3:
+    handle: news
+    hasUrls: true
+    name: News
+    settings:
+      autoFocalPoint: ''
+      bucket: friendship-madness-production
+      bucketSelectionMode: choose
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: '1 years'
+      keyId: $AMAZON_S3_ACCESS_KEY_ID
+      makeUploadsPublic: '1'
+      region: us-east-1
+      secret: $AMAZON_S3_SECRET_ACCESS_KEY
+      storageClass: ''
+      subfolder: /news
+    sortOrder: 3
+    type: craft\awss3\Volume
+    url: $AMAZON_S3_BASE_URL
+  a2d6ba02-9cae-41d6-acf7-9a7c5d267da7:
+    handle: friends
+    hasUrls: true
+    name: Friends
+    settings:
+      autoFocalPoint: ''
+      bucket: friendship-madness-production
+      bucketSelectionMode: choose
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: '1 years'
+      keyId: $AMAZON_S3_ACCESS_KEY_ID
+      makeUploadsPublic: '1'
+      region: us-east-1
+      secret: $AMAZON_S3_SECRET_ACCESS_KEY
+      storageClass: ''
+      subfolder: friends
+    sortOrder: 1
+    type: craft\awss3\Volume
+    url: $AMAZON_S3_BASE_URL
+  f5c500fa-a863-4e08-afbb-2f6aa3e42e09:
+    handle: conferences
+    hasUrls: true
+    name: Conferences
+    settings:
+      autoFocalPoint: ''
+      bucket: friendship-madness-production
+      bucketSelectionMode: choose
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: '1 years'
+      keyId: $AMAZON_S3_ACCESS_KEY_ID
+      makeUploadsPublic: '1'
+      region: us-east-1
+      secret: $AMAZON_S3_SECRET_ACCESS_KEY
+      storageClass: ''
+      subfolder: /conferences
+    sortOrder: 2
+    type: craft\awss3\Volume
+    url: $AMAZON_S3_BASE_URL

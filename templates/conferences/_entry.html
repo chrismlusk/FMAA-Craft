@@ -1,0 +1,21 @@
+{# ================================================================== #}
+{# Conferences Detail Page
+{# ================================================================== #}
+{% extends "_layout" %}
+
+{% block content %}
+
+  <article class="article article--detail">
+
+    <h1>Conferences Detail Page</h1>
+    <h2>{{ entry.title }}</h2>
+
+    {% if entry.pageContent | length %}
+      {% for block in entry.pageContent.all() %}
+        {% include '_partials/' ~ block.type ignore missing %}
+      {% endfor %}
+    {% endif %}
+
+  </article>
+
+{% endblock %}

@@ -21,7 +21,11 @@
   }
 
   &:active {
-    --logo-scale: 1.06;
+    --logo-scale: 1.04;
+
+    .svg--logo {
+      transition-duration: 0s;
+    }
   }
 
   @include mq(lg) {

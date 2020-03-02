@@ -1,0 +1,13 @@
+{# ================================================================== #}
+{# Conferences Index Page
+{# ================================================================== #}
+
+{% if category is defined %}
+  <div class="">
+    Conferences: {{ category.title }}
+  </div>
+{% else %}
+  <div class="">
+    Conferences: No defined category
+  </div>
+{% endif %}

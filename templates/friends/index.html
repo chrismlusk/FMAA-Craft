@@ -1,0 +1,13 @@
+{# ================================================================== #}
+{# Friends Index Page
+{# ================================================================== #}
+
+{% if category is defined %}
+  <div class="">
+    Friends: {{ category.title }}
+  </div>
+{% else %}
+  <div class="">
+    Friends: No defined category
+  </div>
+{% endif %}

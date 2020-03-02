@@ -1,0 +1,21 @@
+{# ================================================================== #}
+{# Years Detail Page
+{# ================================================================== #}
+{% extends "_layout" %}
+
+{% block content %}
+
+  <div class="">
+
+    <h1>Years Detail Page</h1>
+    <h2>{{ entry.title }}</h2>
+
+    {% if entry.pageContent | length %}
+      {% for block in entry.pageContent.all() %}
+        {% include '_partials/' ~ block.type ignore missing %}
+      {% endfor %}
+    {% endif %}
+
+  </div>
+
+{% endblock %}
